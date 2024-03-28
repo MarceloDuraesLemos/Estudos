@@ -1,0 +1,33 @@
+// Exercício de Java 1 – Lógica Programação – 26/03/2024
+// exec02 a,b,c
+import java.util.Scanner;
+public class exe1 {
+    public static void main(String[] args) {
+    	 Scanner scanner = new Scanner(System.in);
+         
+         
+         System.out.println("Digite a marca do produto:");
+         String marca = scanner.nextLine();
+         
+         System.out.println("Digite o valor do produto:");
+         double valor = scanner.nextDouble();
+         
+         
+         double aumento = 0;
+         if (marca.equalsIgnoreCase("SAMSUNG")) {
+             aumento = 10;
+         } else if (marca.equalsIgnoreCase("ACER")) {
+             aumento = 15;
+         } else if (marca.equalsIgnoreCase("DELL")) {
+             aumento = 20;
+         } else {
+             System.out.println("Marca não encontrada. O produto não terá aumento.");
+         }
+         
+         
+         double valorFinal = valor * (1 + (aumento / 100));
+         System.out.println("O valor final do produto é: " + valorFinal);
+         
+         scanner.close();
+    }
+}
