@@ -1,0 +1,21 @@
+// Exercício de Java 1 – Lógica Programação – 26/03/2024
+import java.util.Scanner;
+public class exe1 {
+    public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+        
+        int soma = 0;
+        int numero;
+        
+        System.out.println("Digite números inteiros positivos. Digite 0 para sair:");
+        while ((numero = scanner.nextInt()) != 0) {
+            if (numero > 0) {
+                soma += numero;
+            } 
+        }
+        
+        System.out.println("Resultado da soma: " + soma);
+        
+        scanner.close();
+    }
+}
