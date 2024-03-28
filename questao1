@@ -1,0 +1,17 @@
+// Exercício de Java 1 – Lógica Programação – 26/03/2024
+// questão 1:
+public class exe1 { 
+	public static void main(String[] args){
+		int X = 10;
+		int Y = 2;
+		int W = 3;
+		
+		X=10+Y;
+		W=X+W;
+		Y=X%Y;
+		
+		System.out.println("X:" + X);
+		System.out.println("Y:" + Y);
+		System.out.println("W:" + W);
+	}
+}
