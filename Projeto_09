@@ -1,0 +1,39 @@
+// Exercício de Java 1 – Lógica Programação – 26/03/2024
+import java.util.Scanner;
+public class exe1 {
+    public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+        
+        int idade;
+        char sexo;
+        int somaIdadesFeminino = 0;
+        int contadorFeminino = 0;
+        
+        System.out.println("Digite a idade e o sexo dos funcionários (F/M):");
+        while (true) {
+            System.out.print("Idade: ");
+            idade = scanner.nextInt();
+            if (idade >= 100) {
+                break;
+            }
+            
+            System.out.print("Sexo (F/M): ");
+            sexo = scanner.next().charAt(0);
+            
+            if (sexo == 'F') {
+                somaIdadesFeminino += idade;
+                contadorFeminino++;
+            }
+        }
+        
+        if (contadorFeminino > 0) {
+            double mediaIdadeFeminino = (double) somaIdadesFeminino / contadorFeminino;
+            System.out.println("Média de idade das funcionárias do sexo feminino: " + mediaIdadeFeminino);
+            System.out.println("Quantidade de funcionárias do sexo feminino: " + contadorFeminino);
+        } else {
+            System.out.println("Não foram registradas funcionárias do sexo feminino.");
+        }
+        
+        scanner.close();
+    }
+}
