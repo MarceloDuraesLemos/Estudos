@@ -1,0 +1,27 @@
+// Exercício de Java 1 – Lógica Programação – 26/03/2024
+public class exe1 { 
+	public static void main(String[] args){
+		    int a = 2;
+	        int b = 4;
+	        int c = 6;
+
+	        
+	        boolean resultadoA = ((a + 2) == b) && (c >= 6);
+
+	        
+	        boolean resultadoB = (a < b) || ((c - b) == 2);
+
+	        
+	        boolean resultadoC = (a > b) && (c < 4);
+
+	        
+	        boolean resultadoD = (a == b) || (c >= 6);
+
+	        System.out.println("Resultado A: " + resultadoA);
+	        System.out.println("Resultado B: " + resultadoB);
+	        System.out.println("Resultado C: " + resultadoC);
+	        System.out.println("Resultado D: " + resultadoD);
+	}
+}
+
+// resposta A: Se (((a+2) == b) e (c>=6)) -> resulta em verdadeiro.
