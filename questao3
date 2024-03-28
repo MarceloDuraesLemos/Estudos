@@ -1,0 +1,23 @@
+// Exercício de Java 1 – Lógica Programação – 26/03/2024
+
+public class exe1 { 
+	public static void main(String[] args){
+	
+ int salario = 2000;
+ int numeroFilhos = 2;
+ String resultado = "";
+ 
+ if (numeroFilhos == 0) {
+	 resultado = "Sem aumento de salário";
+ } else {
+	 if (numeroFilhos == 1) {
+		 salario = salario + (salario * 10/100 );
+	    } else if (numeroFilhos >=2) {
+	    	salario = salario +(salario*15/100);
+	 }
+ }
+ System.out.println("salario final:" + salario);
+	}
+}
+
+// salario final:2300
