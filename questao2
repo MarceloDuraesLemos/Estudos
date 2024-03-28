@@ -1,0 +1,20 @@
+// Exercício de Java 1 – Lógica Programação – 26/03/2024
+public class exe1 { 
+	public static void main(String[] args){
+	
+		int m = 5;
+		int r = 3;
+		boolean q = false;
+		boolean u = true;
+	
+	q = (u && q);
+	u = (m > r);
+	
+	System.out.println("q:" + q);
+	System.out.println("u:" + u);
+	
+	
+	}
+}
+
+// q:false u:true
