@@ -1,0 +1,24 @@
+// Exercício de Java 1 – Lógica Programação – 26/03/2024
+import java.util.Scanner;
+public class exe1 {
+    public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+        
+        int contador = 0;
+        for (int i = 1; i <= 4; i++) {
+            System.out.println("Digite a idade da pessoa " + i + ":");
+            int idade = scanner.nextInt();
+            
+            System.out.println("Digite o peso da pessoa " + i + " (em Kg):");
+            double peso = scanner.nextDouble();
+            
+            if (idade < 25 && peso > 75 && peso < 90) {
+                contador++;
+            }
+        }
+        
+        System.out.println("Quantidade de pessoas abaixo de 25 anos com peso entre 75kg e 90kg: " + contador);
+        
+        scanner.close();
+    }
+}
