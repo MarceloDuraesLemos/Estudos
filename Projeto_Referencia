@@ -1,0 +1,167 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Projeto4 extends JFrame implements ActionListener {
+    JTextField txtUltimoNome, txtPrimeiroNome, txtNomedoLivro, txtCidade, txtEditora, txtAno, txtNumCaracteres, txtReferenciaFinal;
+    JTextField txtAno2, txtNomeCompleto2, txtEditora2;
+    JButton btnMontar, btnLimpar; 
+
+    public Projeto4() {
+        setTitle("Montando uma Referência");
+        setSize(700, 500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(null);
+        
+
+        JLabel lblUltimoNome = new JLabel("Último Nome:");
+        lblUltimoNome.setBounds(20, 20, 100, 20);
+        add(lblUltimoNome);
+
+        txtUltimoNome = new JTextField();
+        txtUltimoNome.setBounds(130, 20, 200, 20);
+        add(txtUltimoNome);
+
+        JLabel lblPrimeiroNome = new JLabel("Primeiro Nome:");
+        lblPrimeiroNome.setBounds(20, 60, 100, 20);
+        add(lblPrimeiroNome);
+
+        txtPrimeiroNome = new JTextField();
+        txtPrimeiroNome.setBounds(130, 60, 200, 20);
+        add(txtPrimeiroNome);
+
+        JLabel lblNomedoLivro = new JLabel("Nome do Livro:");
+        lblNomedoLivro.setBounds(20, 100, 100, 20);
+        add(lblNomedoLivro);
+
+        txtNomedoLivro = new JTextField();
+        txtNomedoLivro.setBounds(130, 100, 200, 20);
+        add(txtNomedoLivro);
+
+        JLabel lblCidade = new JLabel("Cidade:");
+        lblCidade.setBounds(20, 140, 100, 20);
+        add(lblCidade);
+
+        txtCidade = new JTextField();
+        txtCidade.setBounds(130, 140, 200, 20);
+        add(txtCidade);
+
+        JLabel lblEditora = new JLabel("Editora:");
+        lblEditora.setBounds(20, 180, 100, 20);
+        add(lblEditora);
+
+        txtEditora = new JTextField();
+        txtEditora.setBounds(130, 180, 200, 20);
+        add(txtEditora);
+
+        JLabel lblAno = new JLabel("Ano:");
+        lblAno.setBounds(20, 220, 100, 20);
+        add(lblAno);
+
+        txtAno = new JTextField();
+        txtAno.setBounds(130, 220, 200, 20);
+        add(txtAno);
+
+        JLabel lblNumCaracteres = new JLabel("Num. Caracteres:");
+        lblNumCaracteres.setBounds(20, 260, 100, 20);
+        add(lblNumCaracteres);
+
+        txtNumCaracteres = new JTextField();
+        txtNumCaracteres.setBounds(130, 260, 100, 20);
+        txtNumCaracteres.setEditable(false);
+        add(txtNumCaracteres);
+
+        JLabel lblReferenciaFinal = new JLabel("Referência Final:");
+        lblReferenciaFinal.setBounds(20, 300, 150, 20);
+        add(lblReferenciaFinal);
+
+        txtReferenciaFinal = new JTextField();
+        txtReferenciaFinal.setBounds(130, 300, 450, 20);
+        txtReferenciaFinal.setEditable(false);
+        add(txtReferenciaFinal);
+
+        JLabel lblAno2 = new JLabel("Ano:");
+        lblAno2.setBounds(20, 340, 100, 20);
+        add(lblAno2);
+
+        txtAno2 = new JTextField();
+        txtAno2.setBounds(130, 340, 200, 20);
+        txtAno2.setEditable(false);
+        add(txtAno2);
+
+        JLabel lblNomeCompleto2 = new JLabel("Nome Completo:");
+        lblNomeCompleto2.setBounds(20, 380, 150, 20);
+        add(lblNomeCompleto2);
+
+        txtNomeCompleto2 = new JTextField();
+        txtNomeCompleto2.setBounds(130, 380, 250, 20);
+        txtNomeCompleto2.setEditable(false);
+        add(txtNomeCompleto2);
+
+        JLabel lblEditoraSeparado = new JLabel("Editora:");
+        lblEditoraSeparado.setBounds(20, 420, 120, 20);
+        add(lblEditoraSeparado);
+
+        txtEditora2 = new JTextField();
+        txtEditora2.setBounds(130, 420, 250, 20);
+        txtEditora2.setEditable(false);
+        add(txtEditora2);
+
+        btnMontar = new JButton("Montar");
+        btnMontar.setBounds(350, 20, 100, 30);
+        btnMontar.addActionListener(this);
+        add(btnMontar);
+
+        
+        btnLimpar = new JButton("Limpar");
+        btnLimpar.setBounds(470, 20, 100, 30);
+        btnLimpar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                limparCampos();
+            }
+        });
+        add(btnLimpar);
+
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == btnMontar) {
+            String ultimoNome = txtUltimoNome.getText().trim();
+            String primeiroNome = txtPrimeiroNome.getText().trim();
+            String nomeLivro = txtNomedoLivro.getText().trim();
+            String cidade = txtCidade.getText().trim();
+            String editora = txtEditora.getText().trim();
+            String ano = txtAno.getText().trim();
+
+            String referencia = String.join(" - ", ultimoNome + ", " + primeiroNome, nomeLivro, cidade, editora, ano);
+            txtReferenciaFinal.setText(referencia);
+
+            int numCaracteres = referencia.length();
+            txtNumCaracteres.setText(String.valueOf(numCaracteres));
+
+            txtAno2.setText(ano);
+            txtNomeCompleto2.setText(ultimoNome + ", " + primeiroNome);
+            txtEditora2.setText(editora);
+        }
+    }
+
+    private void limparCampos() {
+        txtUltimoNome.setText("");
+        txtPrimeiroNome.setText("");
+        txtNomedoLivro.setText("");
+        txtCidade.setText("");
+        txtEditora.setText("");
+        txtAno.setText("");
+        txtReferenciaFinal.setText("");
+        txtNumCaracteres.setText("");
+        txtAno2.setText("");
+        txtNomeCompleto2.setText("");
+        txtEditora2.setText("");
+    }
+
+    public static void main(String[] args) {
+        new Projeto4();
+    }
+}
